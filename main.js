@@ -22,16 +22,37 @@ function drawGrid() {
     ctx.stroke()
   }
 }
-
-function drawPlayer() {
+function drawPlayer(direction) {
   var img = new Image()
-  img.src = "starter-code/images/character-down.png"
-  
-  img.onload = function() {
-    ctx.drawImage(img,player.col*50,player.row*50,50,50)
-  }
+  switch (direction) {
+    case 'l':
+      img.src = 'starter-code/images/character-left.png'
+      img.onload = function () {
+        ctx.drawImage(img, player.col * 50, player.row * 50, 50, 50)
+      }; break;
 
+    case 'r':
+      img.src = 'starter-code/images/character-right.png'
+      img.onload = function () {
+        ctx.drawImage(img, player.col * 50, player.row * 50, 50, 50)
+      }; break;
+
+    case 'u':
+      img.src = 'starter-code/images/character-up.png'
+      img.onload = function () {
+        ctx.drawImage(img, player.col * 50, player.row * 50, 50, 50)
+      }; break;
+
+    case 'd':
+      img.src = 'starter-code/images/character-down.png'
+      img.onload = function () {
+        ctx.drawImage(img, player.col * 50, player.row * 50, 50, 50)
+      }; break;
+
+
+  }
 }
+
 
 function drawTreasure() {
   var img = new Image()
@@ -45,7 +66,6 @@ function drawTreasure() {
 
 drawGrid()
 drawPlayer()
-
 
 function keyUp() {
   ctx.clearRect(0,0,500,500)
