@@ -2,6 +2,7 @@ class Character {
   constructor(col,row){
     this.col = col;
     this.row = row;
+    this.direction = '';
   }
 
   moveUp() {

@@ -22,33 +22,33 @@ function drawGrid() {
     ctx.stroke()
   }
 }
+
 function drawPlayer(direction) {
   var img = new Image()
   switch (direction) {
     case 'l':
       img.src = 'starter-code/images/character-left.png'
-      img.onload = function () {
+      img.onload = function() {
         ctx.drawImage(img, player.col * 50, player.row * 50, 50, 50)
       }; break;
 
     case 'r':
       img.src = 'starter-code/images/character-right.png'
-      img.onload = function () {
+      img.onload = function() {
         ctx.drawImage(img, player.col * 50, player.row * 50, 50, 50)
       }; break;
 
     case 'u':
       img.src = 'starter-code/images/character-up.png'
-      img.onload = function () {
+      img.onload = function() {
         ctx.drawImage(img, player.col * 50, player.row * 50, 50, 50)
       }; break;
 
     case 'd':
       img.src = 'starter-code/images/character-down.png'
-      img.onload = function () {
+      img.onload = function() {
         ctx.drawImage(img, player.col * 50, player.row * 50, 50, 50)
       }; break;
-
 
   }
 }
@@ -60,18 +60,18 @@ function drawTreasure() {
   img.onload = function() {
     ctx.drawImage(img,treasure.col*50,treasure.row*50,50,50)
   }
-
 }
 
 
 drawGrid()
-drawPlayer()
+drawPlayer('d')
+
 
 function keyUp() {
   ctx.clearRect(0,0,500,500)
   drawGrid()
   player.moveUp()
-  drawPlayer()
+  drawPlayer('u')
   checkTreasure()
 }
 
@@ -79,7 +79,7 @@ function keyDown() {
   ctx.clearRect(0,0,500,500)
   drawGrid()
   player.moveDown()
-  drawPlayer()
+  drawPlayer('d')
   checkTreasure()
 }
 
@@ -87,7 +87,7 @@ function keyRight() {
   ctx.clearRect(0,0,500,500)
   drawGrid()
   player.moveRight()
-  drawPlayer()
+  drawPlayer('r')
   checkTreasure()
 }
 
@@ -95,7 +95,7 @@ function keyLeft() {
   ctx.clearRect(0,0,500,500)
   drawGrid()
   player.moveLeft()
-  drawPlayer()
+  drawPlayer('l')
   checkTreasure()
 }
 
