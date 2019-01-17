@@ -1,0 +1,11 @@
+canvas{
+  border: 1px solid black;
+}
+
+#char{
+  display: none;
+
+}
+#treasure{
+  display: none;
+}
