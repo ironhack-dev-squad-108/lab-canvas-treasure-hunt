@@ -1,39 +1,36 @@
 var characterup = new Image();   
-characterup.src = 'images/character-up.png'; 
 var characterdown = new Image();   
-characterdown.src = 'images/character-down.png'; 
-var characterleft = new Image();   
-characterleft.src = 'images/character-left.png'; 
-var characterright = new Image();   
-characterright.src = 'images/character-right.png'; 
+var characterleft = new Image();    
+var characterright = new Image();  
 var treasure = new Image();   
+characterup.src = 'images/character-up.png'; 
+characterdown.src = 'images/character-down.png'; 
+characterleft.src = 'images/character-left.png';
+characterright.src = 'images/character-right.png'; 
 treasure.src = 'images/treasure.png';
-
 var character = new Character;    
 var treasureObj = new Treasure;
 
-treasureObj.setRandomPosition();
-document.addEventListener('keydown', function(event) {
-    console.log('keydown')
-    if (event.keyCode === 38) { //up
+document.onkeydown = ((e) => {
+    if (e.keyCode === 38) { //up
         character.moveUp()
     }    
-    else if (event.keyCode === 40) { //down
+    else if (e.keyCode === 40) { //down
         character.moveDown()
     }    
-    else if (event.keyCode === 37) { //left
+    else if (e.keyCode === 37) { //left
         character.moveLeft()
     }    
-    else if (event.keyCode === 39) { //right
+    else if (e.keyCode === 39) { //right
         character.moveRight()
     }    
 })
 
-generateGrid(document.querySelector('canvas'))
-
-characterup.onload = () => {
+setTimeout(() => {
+    generateGrid(document.querySelector('canvas'))
     drawPlayer();
-}         
+}, 500)
+
 function drawPlayer(direction) {
     var canvas = document.querySelector('canvas');
     var ctx = canvas.getContext('2d');

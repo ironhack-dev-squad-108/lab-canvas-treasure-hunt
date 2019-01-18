@@ -33,6 +33,7 @@ class Treasure {
     constructor() {
         this.col = 5
         this.row = 5
+        this.setRandomPosition();
     }
     setRandomPosition() {
         this.col = Math.floor(Math.random() * Math.floor(10))
