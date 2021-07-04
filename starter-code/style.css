@@ -1,0 +1,14 @@
+.field {
+    display: flex;
+    flex-direction: row;
+    font-size: 20px;
+}
+
+canvas {
+    border: 1px solid darkgrey;
+}
+
+.points {
+    font-size: 30px;
+    margin-left: 10px;
+}
